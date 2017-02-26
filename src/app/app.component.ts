@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <app-sidebar></app-sidebar>
+    <app-header></app-header>
+    <app-content></app-content>
+  `
 })
 export class AppComponent {
-  title = 'app works!';
+
+  @HostBinding('class.sidebar-closed')
+  isSidebarClosed: boolean = true;
+
+  toggleSidebar() {
+    this.isSidebarClosed = !this.isSidebarClosed;
+  }
+
 }

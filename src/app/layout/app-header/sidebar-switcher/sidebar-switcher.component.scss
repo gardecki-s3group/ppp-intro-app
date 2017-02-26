@@ -1,0 +1,82 @@
+@import '../../../../scss/variables';
+
+:host {
+  display:block;
+  box-sizing: border-box;
+  background: darken($header-bg-color, 3%);
+  width: $header-height;
+  height: $header-height;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    background: darken($header-bg-color, 5%);
+  }
+}
+
+.sidebar-closed :host {
+
+  .bar {
+    display:block;
+    width: 20px;
+    height: 3px;
+    transition: all $sidebar-animation-time $sidebar-animation-easing;
+    background-color: white;
+    position: absolute;
+
+    &.upper {
+      top: 17px;
+      width: 20px;
+      transform: rotate(0deg);
+    }
+
+    &.middle {
+      top: 24px;
+      width: 20px;
+      opacity: 1;
+    }
+
+    &.lower {
+      top: 31px;
+      width: 20px;
+      transform: rotate(0deg);
+    }
+
+  }
+
+}
+
+
+
+
+.bar {
+  display:block;
+  width: 20px;
+  left: 15px;
+  height: 3px;
+  transition: all $sidebar-animation-time $sidebar-animation-easing;
+  background-color: white;
+  position: absolute;
+
+  &.upper {
+    top: 23px;
+    transform: rotate(45deg);
+    width: 18px;
+  }
+
+  &.middle {
+    top: 24px;
+    opacity: 0;
+  }
+
+  &.lower {
+    top: 23px;
+    transform: rotate(-45deg);
+    width: 18px;
+  }
+
+}
+
+
+
+

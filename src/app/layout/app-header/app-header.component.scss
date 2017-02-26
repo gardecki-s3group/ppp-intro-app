@@ -1,0 +1,19 @@
+@import '../../../scss/variables';
+
+:host {
+  display: block;
+  position: fixed;
+  z-index: 10;
+  left: $sidebar-width-big;
+  height: $header-height;
+  width: 100%;
+  background-color: $header-bg-color;
+  -webkit-box-shadow: 0px 3px 29px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 3px 29px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 3px 29px 0px rgba(0,0,0,0.4);
+  transition: left $sidebar-animation-time $sidebar-animation-easing;
+}
+
+.sidebar-closed :host {
+  left: $sidebar-width-small;
+}

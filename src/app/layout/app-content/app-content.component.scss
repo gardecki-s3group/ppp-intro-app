@@ -1,0 +1,22 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  left: $sidebar-width-big;
+  right: 0;
+  transition: left $sidebar-animation-time $sidebar-animation-easing;
+}
+
+.sidebar-closed :host {
+  left: $sidebar-width-small;
+
+  .page-title {
+    left: $sidebar-width-small;
+  }
+}

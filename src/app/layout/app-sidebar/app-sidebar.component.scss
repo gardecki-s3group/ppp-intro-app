@@ -1,0 +1,90 @@
+@import '../../../scss/variables';
+
+:host {
+  display: block;
+  position: fixed;
+  box-sizing: border-box;
+  background: $sidebar-bg-color;
+  width: $sidebar-width-big;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: width $sidebar-animation-time $sidebar-animation-easing;
+
+  .image-wrapper {
+    min-height: $sidebar-item-height;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding: 8px 0;
+    transition: width 0.3s ease;
+  }
+}
+
+.nav-item {
+  display: block;
+  height: $sidebar-item-height;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+  box-sizing: border-box;
+  background: darken($sidebar-bg-color, 3%);
+  line-height: $sidebar-item-height;
+  padding: 0 18px;
+  font-size: 1.1em;
+  overflow: hidden;
+  text-transform: uppercase;
+  border-bottom: 1px solid darken($sidebar-bg-color, 2%);
+  color: $sidebar-text-color;
+  span {
+    font-family: 'Roboto', sans-serif;
+    margin-left:15px;
+    font-size: 0.7em;
+    transition: opacity $sidebar-animation-time $sidebar-animation-easing;
+  }
+
+  &.active {
+    border-left: 4px solid $sidebar-active-color;
+    background: darken($sidebar-bg-color, 7%);
+    color: lighten($sidebar-text-color, 10%);
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 18px;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 7px 7px 7px 0;
+      transition: border-width $sidebar-animation-time $sidebar-animation-easing;
+      border-color: transparent #ffffff transparent transparent;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: darken($sidebar-bg-color, 7%);
+    color: lighten($sidebar-text-color, 10%);
+  }
+}
+
+.sidebar-closed :host {
+    width: $sidebar-width-small;
+
+    img {
+      width: 60%;
+    }
+
+    .nav-item span {
+      opacity: 0;
+    }
+
+    .nav-item.active:before {
+      border-width: 7px 0px 7px 0;
+    }
+}

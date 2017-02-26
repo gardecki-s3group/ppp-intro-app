@@ -1,0 +1,28 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+
+
+:host-context(.sidebar-closed) {
+    left: $sidebar-width-small;
+}
+
+:host {
+  left: $sidebar-width-big;
+  overflow: hidden;
+  right:0;
+  min-height: $page-title-height;
+  max-height: $page-title-height;
+  position:fixed;
+  @include gradient-horizontal($page-title-bg-color-1, $page-title-bg-color-2);
+  transition: left $sidebar-animation-time $sidebar-animation-easing;
+  box-sizing: border-box;
+  border-bottom: 1px solid #c6c6c6;
+  z-index: 1;
+  line-height: $page-title-height;
+  padding: 0 50px;
+  color: $page-title-text-color;
+}
+
+h1 {
+  line-height: 100px;
+}

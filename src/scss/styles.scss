@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import 'variables';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+p {
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+h1 {
+  font-size: $page-title-font-size;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+
+h2 {
+  margin: 0;
+  font-size: 26px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
