@@ -1,0 +1,16 @@
+<div class="person-container">
+  <div class="person-header">
+    <h1>{{ person.firstName }} {{ person.lastName }}</h1>
+  </div>
+  <div class="person-content">
+    <div class="person-image-container">
+      <div class="person-image" [style.backgroundImage]="'url(' + person.imageUrl + ')'"></div>
+    </div>
+    <div class="person-data-container">
+      <div class="person-data">
+        <p><span class="bold">Gender: </span>{{ person.gender }}</p>
+        <p><span class="bold">Date of birth: </span>{{ person.dateOfBirth }}</p>
+      </div>
+    </div>
+  </div>
+</div>

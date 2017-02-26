@@ -17,6 +17,7 @@ import { PeoplePageComponent } from "./pages/people-page/people-page.component";
 import { PageBodyComponent } from "./pages/_common/page-body/page-body.component";
 import { PersonFormComponent } from "./_common/person-form/person-form.component";
 import { routing } from "./app.routing";
+import { PersonItemComponent } from "./_common/person-item/person-item.component";
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { routing } from "./app.routing";
         HomePageComponent,
         AddPersonPageComponent,
         PeoplePageComponent,
-        PersonFormComponent
+        PersonFormComponent,
+        PersonItemComponent
     ],
     imports: [
         BrowserModule,
