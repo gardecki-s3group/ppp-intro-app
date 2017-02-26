@@ -21,4 +21,8 @@ export class Person {
         this.dateOfBirth = new Date(dateOfBirth);
         this.imageUrl = imageUrl;
     }
+
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
 }
