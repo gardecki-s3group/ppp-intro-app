@@ -20,6 +20,7 @@ import { routing } from "./app.routing";
 import { PersonItemComponent } from "./_common/person-item/person-item.component";
 import { AgePipe } from "./pipes/age.pipe";
 import { PersonListComponent } from "./_common/person-list/person-list.component";
+import { PersonDataService } from "./services/person-data.service";
 
 @NgModule({
     declarations: [
@@ -46,7 +47,7 @@ import { PersonListComponent } from "./_common/person-list/person-list.component
         Ng2DatetimePickerModule,
         routing
     ],
-    providers: [],
+    providers: [PersonDataService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
