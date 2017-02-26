@@ -19,6 +19,7 @@ import { PersonFormComponent } from "./_common/person-form/person-form.component
 import { routing } from "./app.routing";
 import { PersonItemComponent } from "./_common/person-item/person-item.component";
 import { AgePipe } from "./pipes/age.pipe";
+import { PersonListComponent } from "./_common/person-list/person-list.component";
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import { AgePipe } from "./pipes/age.pipe";
         PeoplePageComponent,
         PersonFormComponent,
         PersonItemComponent,
+        PersonListComponent,
         AgePipe
     ],
     imports: [
