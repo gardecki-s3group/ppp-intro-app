@@ -2,3 +2,15 @@
   display: block;
   padding: 20px;
 }
+
+input.ng-dirty {
+
+  &.ng-invalid {
+    background-color: rgba(195, 14, 46, 0.11);
+  }
+
+  &.ng-valid {
+    background-color: rgba(36, 161, 54, 0.21);
+  }
+
+}

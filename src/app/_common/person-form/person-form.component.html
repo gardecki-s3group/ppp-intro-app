@@ -1,43 +1,85 @@
 <form #formRef="ngForm" (ngSubmit)="submitForm(formRef.value)">
 
-
-<!-- First Name: -->
+    <!-- First Name: -->
     <div class="form-group">
-        <label>Name:</label>
-        <input name="firstName" required ngModel class="form-control">
+        <label>* Name:</label>
+        <input #firstNameRef="ngModel" name="firstName" required minlength="3" ngModel class="form-control">
+
+        <!--Validation Errors-->
+        <div *ngIf="firstNameRef.dirty">
+            <p *ngIf="firstNameRef.errors?.required" class="text-danger">
+                First name is required
+            </p>
+            <p *ngIf="firstNameRef.errors?.minlength" class="text-danger">
+                Minimal number of characters is {{ firstNameRef.errors.minlength.requiredLength }}.
+                You only entered {{ firstNameRef.errors.minlength.actualLength }}
+            </p>
+        </div>
     </div>
+
 
     <!-- Last Name: -->
     <div class="form-group">
-        <label>Surname:</label>
-        <input name="lastName" class="form-control">
+        <label>* Surname:</label>
+        <input #lastNameRef="ngModel" required name="lastName" ngModel class="form-control">
+
+        <!--Validation Errors-->
+        <div *ngIf="lastNameRef.dirty">
+            <p *ngIf="lastNameRef.errors?.required" class="text-danger">
+                Last name is required
+            </p>
+        </div>
     </div>
 
     <!-- Gender: -->
     <div class="form-group">
-        <label for="country">Gender:</label>
+        <label for="country">* Gender:</label>
         <div class="form-row">
             <label class="radio-inline">
-                <input type="radio" name="gender" value="MALE">Male
+                <input #genderRef="ngModel" required type="radio" name="gender" ngModel value="MALE">Male
             </label>
             <label class="radio-inline">
-                <input type="radio" name="gender" value="FEMALE">Female
+                <input type="radio" name="gender" required ngModel value="FEMALE">Female
             </label>
+
+            <!--Validation Errors-->
+            <div *ngIf="genderRef.dirty">
+                <p *ngIf="genderRef.errors?.required" class="text-danger">
+                    Gender is required
+                </p>
+            </div>
+
         </div>
     </div>
 
     <!-- Date of Birth: -->
     <div class="form-group">
-        <label>Date of Birth:</label>
-        <input name="dateOfBirth" [(ngModel)]="initialDob" ng2-datetime-picker date-only="true" class="form-control">
+        <label>* Date of Birth:</label>
+        <input #dobRef="ngModel" name="dateOfBirth" required [(ngModel)]="initialDob" ng2-datetime-picker
+               date-only="true" class="form-control">
+
+        <!--Validation Errors-->
+        <div *ngIf="dobRef.dirty">
+            <p *ngIf="dobRef.errors?.required" class="text-danger">
+                Date of birth is required
+            </p>
+        </div>
     </div>
 
     <!-- Image Url: -->
     <div class="form-group">
         <label for="country">Image url:</label>
-        <input name="imageUrl" class="form-control" id="country">
+        <input #imageRef="ngModel" name="imageUrl" pattern="(https?:\/\/.*\.(?:png|jpg))" ngModel class="form-control"
+               id="country">
+
+        <!--Validation Errors-->
+        <div *ngIf="imageRef.dirty">
+            <p *ngIf="imageRef.errors?.pattern" class="text-danger">
+                Please enter valid url for jpg or png image
+            </p>
+        </div>
     </div>
 
     <!-- Submit Button -->
-    <button [disabled]="formRef.invalid" type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" [disabled]="formRef.invalid" class="btn btn-default">Submit</button>
 </form>
