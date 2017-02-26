@@ -18,6 +18,7 @@ import { PageBodyComponent } from "./pages/_common/page-body/page-body.component
 import { PersonFormComponent } from "./_common/person-form/person-form.component";
 import { routing } from "./app.routing";
 import { PersonItemComponent } from "./_common/person-item/person-item.component";
+import { AgePipe } from "./pipes/age.pipe";
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { PersonItemComponent } from "./_common/person-item/person-item.component
         AddPersonPageComponent,
         PeoplePageComponent,
         PersonFormComponent,
-        PersonItemComponent
+        PersonItemComponent,
+        AgePipe
     ],
     imports: [
         BrowserModule,
