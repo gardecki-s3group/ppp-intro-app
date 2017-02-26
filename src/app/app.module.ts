@@ -16,6 +16,7 @@ import { AddPersonPageComponent } from "./pages/add-person-page/add-person-page.
 import { PeoplePageComponent } from "./pages/people-page/people-page.component";
 import { PageBodyComponent } from "./pages/_common/page-body/page-body.component";
 import { PersonFormComponent } from "./_common/person-form/person-form.component";
+import { routing } from "./app.routing";
 
 @NgModule({
     declarations: [
@@ -36,7 +37,8 @@ import { PersonFormComponent } from "./_common/person-form/person-form.component
         FormsModule,
         HttpModule,
         Angular2FontawesomeModule,
-        Ng2DatetimePickerModule
+        Ng2DatetimePickerModule,
+        routing
     ],
     providers: [],
     bootstrap: [AppComponent]
