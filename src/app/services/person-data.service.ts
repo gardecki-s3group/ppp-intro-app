@@ -15,4 +15,11 @@ export class PersonDataService {
         return this._people;
     }
 
+    addPerson(data) {
+        let newId = Math.max(...this._people.map(p => p.id)) + 1;
+        this._people.push(
+            new Person(newId, data.firstName, data.lastName, data.gender, data.dateOfBirth, data.imageUrl)
+        )
+    }
+
 }
